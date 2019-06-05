@@ -10,7 +10,10 @@ class Search extends Component {
                 <Header />
                 <h1>GitHub Repo Search</h1>
                 <Form />
+                <hr/>
+                <p>Please enter query and click SEARCH button above, results appear here</p>
                 <Footer />
+                
             </div>
         )
     }
