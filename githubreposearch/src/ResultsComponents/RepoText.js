@@ -1,6 +1,8 @@
 import React from 'react'
+import "../App.css"
 
-export const RepoText = () => {
+
+const RepoText = () => {
     return (
         <div>
             <h2>Title of Repo</h2>
@@ -8,3 +10,5 @@ export const RepoText = () => {
         </div>
     )
 }
+
+export default RepoText

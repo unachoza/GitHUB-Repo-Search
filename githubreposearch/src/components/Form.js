@@ -1,14 +1,18 @@
-import React, {Component} from 'React'
+import React, {Component} from 'react'
+import "../App.css"
+
+
 
 class Form extends Component {
     render(){
         return(
             <div>
                 <form>
-                <input>Text</input>
-                <input>Stars</input>
-                <input>License</input>
-                <input type="checkbox">Include Forked</input>
+                    <input type="input" placeholder="Text" /><br></br>
+                    <input type="input" placeholder="Stars" /> <br></br>
+                    <input type="input" placeholder="License" /><br></br>
+                    <p>Include Fork:</p>
+                    <input type="checkbox"/> <br></br>
                 </form>
             </div>
         )

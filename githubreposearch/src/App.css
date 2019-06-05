@@ -1,0 +1,44 @@
+.app {
+    margin:auto
+    
+}
+h1{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 10px
+}
+
+img {
+    width: 3%;
+    height: auto;
+    padding: 0
+}
+
+.result-container {
+    border: 1px black solid;
+    padding: 10px;
+    width: 70%;
+    display: flex;
+    justify-content: center
+}
+.list-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+
+div {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+.search-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    border: 1px black solid
+}
+.app-container {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px black solid
+}

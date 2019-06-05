@@ -1,16 +1,16 @@
 import React, {Component} from 'react'
-import Form from './Form'
-import Header from './Header'
-import Footer from './Footer'
+import ResultsList from '../ResultsComponents/ResultsList'
+import Search from './Search'
+import "../App.css"
 
 class App extends Component {
     render(){
         return(
-            <div>
-                <Header />
+            <div className="app-container">
                 <h1>This is where user will search and find</h1>
-                <Form/>
-                <Footer />
+                <Search />
+                <ResultsList />
+                
             </div>
         )
     }

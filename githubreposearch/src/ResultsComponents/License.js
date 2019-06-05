@@ -1,6 +1,8 @@
 import React from 'react'
+import "../App.css"
 
-export const License = () => {
+
+const License = () => {
     return (
         <div>
             <h6>License:</h6>
@@ -8,3 +10,5 @@ export const License = () => {
         </div>
     )
 }
+
+export default License

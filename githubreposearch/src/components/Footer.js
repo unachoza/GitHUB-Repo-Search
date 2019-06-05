@@ -1,7 +1,11 @@
 import React from 'react'
+import "../App.css"
 
-export const Footer = () => {
+
+const Footer = () => {
     return (
         <div>I have feet</div>
     )
 }
+
+export default Footer
