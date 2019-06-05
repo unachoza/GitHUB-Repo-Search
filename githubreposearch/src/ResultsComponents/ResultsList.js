@@ -7,7 +7,7 @@ class ResultsList extends Component{
     render(){
         return (
             <div className="list-container">
-                <h4>Look at all these results</h4>
+                <h4>SEARCH results</h4>
                 <ResultSingle />
                 <ResultSingle />
                 <ResultSingle />

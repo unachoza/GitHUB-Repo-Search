@@ -4,9 +4,9 @@ import "../App.css"
 
 const License = () => {
     return (
-        <div>
-            <h6>License:</h6>
-            <p>MIT</p>
+        <div className="license">
+            <h6 className="text-title">License:</h6>
+            <p className="text-answer">MIT License</p>
         </div>
     )
 }

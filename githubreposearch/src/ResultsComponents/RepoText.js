@@ -4,9 +4,9 @@ import "../App.css"
 
 const RepoText = () => {
     return (
-        <div>
-            <h2>Title of Repo</h2>
-            <p>repo description</p>
+        <div className="text">
+            <h2 className="repo-text">Title of Repo</h2>
+            <p className="repo-description">repo description</p>
         </div>
     )
 }

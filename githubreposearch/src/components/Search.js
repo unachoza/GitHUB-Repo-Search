@@ -12,6 +12,7 @@ class Search extends Component {
                 <Form />
                 <hr/>
                 <p>Please enter query and click SEARCH button above, results appear here</p>
+                
                 <Footer />
                 
             </div>

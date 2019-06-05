@@ -9,7 +9,6 @@ class ResultSingle extends Component{
     render(){
         return (
             <div className="result-container">
-                <p>I'm a result!</p>
                 <RepoText />
                 <RepoStars />
                 <License />
