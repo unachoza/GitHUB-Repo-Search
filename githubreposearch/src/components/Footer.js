@@ -4,7 +4,7 @@ import "../App.css"
 
 const Footer = () => {
     return (
-        <div>I have feet</div>
+        <div className="footer">I have feet</div>
     )
 }
 

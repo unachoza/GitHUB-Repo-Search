@@ -8,6 +8,7 @@ class Search extends Component {
         return (
             <div className="search-container">
                 <Header />
+                <h1>GitHub Repo Search</h1>
                 <Form />
                 <Footer />
             </div>

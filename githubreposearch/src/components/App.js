@@ -7,7 +7,6 @@ class App extends Component {
     render(){
         return(
             <div className="app-container">
-                <h1>This is where user will search and find</h1>
                 <Search />
                 <ResultsList />
                 
