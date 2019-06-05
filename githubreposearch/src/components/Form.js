@@ -14,7 +14,8 @@ class Form extends Component {
         }
     }
     handleSubmit =  async (e) => {
-       await this.setState({})
+        e.preventDefault()
+       await console.log(this.state)
 
     }
 
@@ -29,17 +30,24 @@ class Form extends Component {
     }
 
     forkClick = (e) => {
-
+        e.preventDefault()
+        this.setState({forked: true})
+        console.log(this.state.forked)
+    }
+    handleDropDown = (e) => {
+        e.preventDefault()
+        this.setState({license: e.target.value})
+        console.log(this.state.license)
     }
     render(){
         return(
             <div>
-                <form className="form">
+                <form className="form" onSubmit={(e) => this.handleSubmit(e)}>
                     <div className="column">
                         Text<br></br>
-                        <input type="input" placeholder="Text" onClick={(e) => this.handleTextInput(e)}/><br></br>
+                        <input type="input" placeholder="Text" onChange={(e) => this.handleTextInput(e)}/><br></br>
                         License<br></br>
-                        <select className="dropdown" name="license">
+                        <select className="dropdown" name="license" onChange={(e) => this.handleDropDown(e)}>
                             <option value="MIT">MIT</option>
                             <option value="Apache">Apache</option>
                             <option value="GLP">GLP</option>
@@ -47,9 +55,9 @@ class Form extends Component {
                     </div>
                     <div className="column">
                         Stars<br></br>
-                        <input type="input" placeholder="Stars"  onClick={(e) => this.handleStarsInput(e)} /> <br></br>
+                        <input type="input" placeholder="Stars"  onChange={(e) => this.handleStarsInput(e)} /> <br></br>
                      <div id="fork">
-                        <input id="box"type="checkbox"/> 
+                        <input id="box"type="checkbox" onClick={(e) => this.forkClick(e)}/> 
                         <p id="checkbox-title">Include Forked</p>
                      </div>
                     </div>
