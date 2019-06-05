@@ -133,7 +133,6 @@ width: 20px;
  }
 
 .text {
-    border: solid 1px  rgb(165, 161, 161);
     width: 70%
 }
 .star {
@@ -149,7 +148,6 @@ width: 12%
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: solid 1px  rgb(165, 161, 161);
 
     width: 12%
 
