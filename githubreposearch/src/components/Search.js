@@ -5,6 +5,16 @@ import Footer from './Footer'
 import ResultsList from '../ResultsComponents/ResultsList';
 
 class Search extends Component {
+    constructor(){
+        super()
+        this.state = { 
+            showResults: false
+        }
+    }
+    renderResult(){
+        return this.state.showResults? <ResultsList /> : ""
+         }
+
     render(){
         return (
             <div className="search-container">
@@ -13,7 +23,7 @@ class Search extends Component {
                 <Form />
                 <hr/>
                 <p>Please enter query and click SEARCH button above, results appear here</p>
-                <ResultsList />
+                {this.renderResult()}
                 <Footer />
                 
             </div>

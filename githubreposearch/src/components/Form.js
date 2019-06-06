@@ -58,7 +58,7 @@ class Form extends Component {
                         Stars<br></br>
                         <input type="input" placeholder="Stars"  onChange={(e) => this.handleStarsInput(e)} /> <br></br>
                      <div id="fork">
-                        <input id="box"type="checkbox" onClick={(e) => this.forkClick(e)}/> 
+                        <input id="box"type="checkbox" onClick={(e) => this.forkToggleClick(e)}/> 
                         <p id="checkbox-title">Include Forked</p>
                      </div>
                     </div>

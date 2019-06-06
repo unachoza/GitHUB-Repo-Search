@@ -7,12 +7,13 @@ class App extends Component {
     constructor(){
         super()
         this.state ={ 
-            showResults: true
+            showResults: false
         }
     }
     renderResult(){
         return this.state.showResults? <ResultsList /> : ""
          }
+         
     render(){
     
         return(
