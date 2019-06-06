@@ -29,9 +29,10 @@ class Form extends Component {
         console.log(this.state.stars)
     }
 
-    forkClick = (e) => {
+    forkToggleClick = (e) => {
         e.preventDefault()
-        this.setState({forked: true})
+        this.state.forked ? this.setState({forked: false}) : this.setState({forked: true})
+        !this.state.forked ? this.setState({forked: true}) : this.setState({forked: false}) 
         console.log(this.state.forked)
     }
     handleDropDown = (e) => {
