@@ -19,7 +19,7 @@ class App extends Component {
         return(
             <div className="app-container">
                 <Search />
-                {/* <ResultsList /> */}
+                <ResultsList /> */}
                 {this.renderResult()}
             </div>
         )

@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import ResultList from "../ResultsComponents/ResultsList"
+import ResultsList from "../ResultsComponents/ResultsList"
 import "../App.css"
 
 
@@ -49,24 +49,27 @@ class Form extends Component {
     // querying API
 
     handleQuery = async (e) => {
+        console.log('waiting')
         await fetch(`https://api.github.com/search/repositories?q=${this.state.text}&sort=stars&order=desc`)
         .then(res => res.json())
         .then(res => {
             this.setState({
                 isLoaded: true,
-                data: res.items[0].name
+                data: res.items
             })
         })
-        console.log(this.state.isLoaded, this.state.data)
+        console.log(this.state.isLoaded, this.state.data[0])
     }
 
 
     render(){
         if  (this.state.isLoaded) {
-                let firstResponse = this.state.data
+            let responses = this.state.data
+                let firstResponse = this.state.data[0].name
+                // console.log(firstResponse)
                 return (
                     <div>
-                        <ResultList firstResponse ={this.firstResponse} />
+                        <ResultsList  responses={responses}/>
                         <h1>{firstResponse}</h1>
                     </div>
                 )
