@@ -19,7 +19,6 @@ class Form extends Component {
     //capturing form data
     handleSubmit =  async (e) => {
         e.preventDefault()
-        this.setState({text: "simon+says"})
        await console.log(this.state)
        this.handleQuery(e)
     }
