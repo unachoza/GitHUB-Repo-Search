@@ -10,13 +10,18 @@ class Form extends Component {
             text: "", 
             stars: "",
             license: "",
-            forked: false
+            forked: false, 
+            isLoaded: false, 
+            data: []
         }
     }
+
+    //capturing form data
     handleSubmit =  async (e) => {
         e.preventDefault()
+        this.setState({text: "simon+says"})
        await console.log(this.state)
-
+       this.handleQuery(e)
     }
 
     handleTextInput  = async (e) => {
@@ -40,7 +45,30 @@ class Form extends Component {
         this.setState({license: e.target.value})
         console.log(this.state.license)
     }
+
+    // querying API
+
+    handleQuery = async (e) => {
+        await fetch(`https://api.github.com/search/repositories?q=${this.state.text}&sort=stars&order=desc`)
+        .then(res => res.json())
+        .then(res => {
+            this.setState({
+                isLoaded: true,
+                data: res.items[0].name
+            })
+        })
+        console.log(this.state.isLoaded, this.state.data)
+    }
     render(){
+
+        if (this.state.isLoaded) {
+            let firstResponse = this.state.data
+            return (
+                <div>
+                    <h1>{firstResponse}</h1>
+                </div>
+            )
+}
         return(
             <div>
                 <form className="form" onSubmit={(e) => this.handleSubmit(e)}>
@@ -49,7 +77,9 @@ class Form extends Component {
                         <input type="input" placeholder="Text" onChange={(e) => this.handleTextInput(e)}/><br></br>
                         License<br></br>
                         <select className="dropdown" name="license" onChange={(e) => this.handleDropDown(e)}>
+                            <option value="null"></option> 
                             <option value="MIT">MIT</option>
+                            <option value="ISC">ISC</option>
                             <option value="Apache">Apache</option>
                             <option value="GLP">GLP</option>
                         </select>
