@@ -1,11 +1,12 @@
 import React, {Component} from 'react'
+import ResultList from "../ResultsComponents/ResultsList"
 import "../App.css"
 
 
 
 class Form extends Component {
-    constructor(){
-        super()
+    constructor(props){
+        super(props)
         this.state = {
             text: "", 
             stars: "",
@@ -58,16 +59,20 @@ class Form extends Component {
         })
         console.log(this.state.isLoaded, this.state.data)
     }
-    render(){
 
-        if (this.state.isLoaded) {
-            let firstResponse = this.state.data
-            return (
-                <div>
-                    <h1>{firstResponse}</h1>
-                </div>
-            )
-}
+
+    render(){
+        if  (this.state.isLoaded) {
+                let firstResponse = this.state.data
+                return (
+                    <div>
+                        <ResultList firstResponse ={this.firstResponse} />
+                        <h1>{firstResponse}</h1>
+                    </div>
+                )
+        }
+        
+            
         return(
             <div>
                 <form className="form" onSubmit={(e) => this.handleSubmit(e)}>
@@ -93,6 +98,7 @@ class Form extends Component {
                     </div>
                     <input  id="submit" type="submit" value="Search" />
                 </form>
+                
             </div>
         )
     }

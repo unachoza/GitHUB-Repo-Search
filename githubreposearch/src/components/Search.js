@@ -3,6 +3,7 @@ import Header from './Header'
 import Form from './Form'
 import Footer from './Footer'
 import ResultsList from '../ResultsComponents/ResultsList';
+import "../App.css"
 
 class Search extends Component {
     constructor(){
@@ -24,6 +25,7 @@ class Search extends Component {
                 <hr/>
                 <p>Please enter query and click SEARCH button above, results appear here</p>
                 {this.renderResult()}
+                <ResultsList  />
                 <Footer />
                 
             </div>

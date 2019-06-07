@@ -13,12 +13,13 @@ class App extends Component {
     renderResult(){
         return this.state.showResults? <ResultsList /> : ""
          }
-         
+
     render(){
     
         return(
             <div className="app-container">
                 <Search />
+                {/* <ResultsList /> */}
                 {this.renderResult()}
             </div>
         )

@@ -9,7 +9,8 @@ class ResultSingle extends Component{
     render(){
         return (
             <div className="result-container">
-                <RepoText />
+                <h6>single {this.props.firstResponse}</h6>
+                <RepoText firstResponse={this.props.firstResponse} />
                 <RepoStars />
                 <License />
             </div>
