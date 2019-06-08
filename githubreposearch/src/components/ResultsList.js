@@ -3,24 +3,31 @@ import ResultSingle from './ResultSingle'
 import "../App.css"
 
 
-const ResultsList = ({responses}) => {
-    console.log(responses[3])
-    let list = responses
-    const results = list.map((response, i ) => {
-         return (
-             <div>
-                <h1 key={i}>{response.user}</h1>
-                {/* <ResultSingle 
-                    key={i}
-                    repoName={result[i].name}
-                /> */}
-                {response.user}
-            </div>) 
-            })
-        return (
-            <h1>{results}</h1>
-        )
-     }
+const ResultsList = ({data}) => (
+    <div>
+        {data.map(data, id => (
+            <div key={data.id}>{data[id].owner.login}</div>
+        ))}
+    </div>
+)
+    // console.log({data})
+    // let list = []
+    // const results = list.map((item, i ) => {
+    //      return (
+    //          <div>
+    //             <h1 key={i}>{item.user}</h1>
+    //             <ResultSingle 
+    //                 key={i}
+    //                 repoName={results[i].name}
+    //             /> */}
+    //              {results}, me
+    //         </div>) 
+    //         })
+
+    //     return (
+    //         <h1>{results}</h1>
+    //     )
+
     
   
     

@@ -62,7 +62,7 @@ class Form extends Component {
         this.queryArry(e)
     }
 
-    queryArry = (e) => {
+    queryArry =  (e) => {
         e.preventDefault()
         console.log('jhe')
         let arr = []
@@ -71,8 +71,18 @@ class Form extends Component {
             arr.push(item)
         })
        } 
+       console.log(arr, arr.length)
+       let newArr = []
+
+       for (let i = 0; i< arr.length; i++){
+        newArr.push(arr[i].name)
+       }
+       console.log(newArr)
+       let user = arr.map( arr.name, i => ( newArr.push(i)))
+       console.log(user)
        this.setState({data: arr}) 
        console.log(this.state.data)
+       return <ResultsList data={this.state.data}/>
     }
 
     render(){
@@ -105,7 +115,7 @@ class Form extends Component {
                     </div>
                     <input  id="submit" type="submit" value="Search" />
                 </form>
-                        <ResultsList  responses={this.state.data}/>
+                        {/* <ResultsList  responses={this.state.data}/> */}
                         <h1>{firstResponse}</h1>
                     </div>
                 )
