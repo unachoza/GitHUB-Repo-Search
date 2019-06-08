@@ -5,31 +5,14 @@ import React from 'react'
 import "../App.css"
 
 
-const ResultSingle = (props) => {
-    const {repoName} = props
-    
-    // const {repoName, repoOwner, url, description, stars, license, forked} = this.responses
+const ResultSingle = (repo, key) => {
+     console.log(repo)
     return (
-        <div>
-            
-            <h1>am I {repoName}</h1>
-        </div>
+        <div className="text">
+        <h2 className="repo-text">{repo}</h2>
+        <p className="repo-description">repo description</p>
+    </div>
     )
    
 }
- 
-// class ResultSingle extends Component{
-//     render(){
-//         return (
-//             <div className="result-container">
-//                 <h6>single {this.props.firstResponse}</h6>
-//                 <RepoText firstResponse={this.props.firstResponse} />
-//                 <RepoStars />
-//                 <License />
-//             </div>
-//         )
-//     }
-    
-// }
-
 export default ResultSingle
