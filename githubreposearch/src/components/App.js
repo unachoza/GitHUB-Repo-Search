@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import ResultsList from './ResultsList'
+// import ResultsList from './ResultsList'
 import Search from './Search'
 import "../App.css"
 

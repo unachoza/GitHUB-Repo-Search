@@ -18,7 +18,7 @@ class Form extends Component {
         }
     }
 
-    //capturing form data
+    //capturing inputs from form 
     handleSubmit =  async (e) => {
         e.preventDefault()
         await console.log(this.state)
@@ -65,8 +65,7 @@ class Form extends Component {
     }
 
     // pulls out data I want and parses into arrays and sets State accourdingly
-    queryArry =  (e) => {
-        e.preventDefault()
+    queryArry =  () => {
         console.log('first')
         let arr = []
         if (this.state.isLoaded){
@@ -118,7 +117,7 @@ class Form extends Component {
 
        this.setState({data: arr}) 
        console.log(this.state)
-       return <ResultsList data={this.state}/>
+    //    return <ResultsList data={this.state}/>
     }
 
 
@@ -152,7 +151,15 @@ class Form extends Component {
                         </div>
                         <input  id="submit" type="submit" value="Search" />
                     </form>
-                    {/* <ResultsList  responses={this.state.data}/>  */}
+                    <ResultsList  
+                    repoNameArr={this.state.repoNameArr}
+                    repoOwnerArr={this.state.repoOwnerArr}
+                    urlArr={this.state.urlArr}
+                    descArr={this.state.descArr}
+                    starsArr={this.state.starsArr}
+                    licenseArr={this.state.licenseArr}
+                    forkedArr={this.state.licenseArr}
+                    /> 
                     <h1>{firstResponse}</h1>
                 </div>
             )

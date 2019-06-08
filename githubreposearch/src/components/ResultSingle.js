@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
-import RepoText from './RepoText'
-import License from './License';
-import RepoStars from './RepoStars'
+import React from 'react'
+// import RepoText from './RepoText'
+// import License from './License';
+// import RepoStars from './RepoStars'
 import "../App.css"
 
 
