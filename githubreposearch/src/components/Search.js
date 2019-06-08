@@ -2,7 +2,7 @@ import React, {Component}from 'react'
 import Header from './Header'
 import Form from './Form'
 import Footer from './Footer'
-import ResultsList from '../ResultsComponents/ResultsList';
+import ResultsList from './ResultsList';
 import "../App.css"
 
 class Search extends Component {
