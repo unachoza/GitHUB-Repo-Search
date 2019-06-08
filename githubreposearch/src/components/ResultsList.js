@@ -3,13 +3,16 @@ import ResultSingle from './ResultSingle'
 import "../App.css"
 
 
-const ResultsList = ({data}) => (
-    <div>
-        {data.map(data, id => (
+const ResultsList = ({data}) => {
+    // const {repoName } = this.data
+    return (
+    <div> you 
+        {/* {data.map(data, id => (
             <div key={data.id}>{data[id].owner.login}</div>
-        ))}
+        ))} */}
     </div>
-)
+    )
+}
     // console.log({data})
     // let list = []
     // const results = list.map((item, i ) => {
