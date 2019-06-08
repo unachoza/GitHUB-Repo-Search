@@ -10,17 +10,15 @@ class App extends Component {
             showResults: false
         }
     }
-    renderResult(){
-        return this.state.showResults? <ResultsList /> : ""
-         }
+    // renderResult(){
+    //     return this.state.showResults? <ResultsList /> : ""
+    //      }
 
     render(){
     
         return(
             <div className="app-container">
                 <Search />
-                <ResultsList /> */}
-                {this.renderResult()}
             </div>
         )
     }

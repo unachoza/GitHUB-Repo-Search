@@ -6,10 +6,13 @@ import "../App.css"
 
 
 const ResultSingle = (props) => {
-    const {repoName, repoOwner, url, description, stars, license, forked} = props
+    const {repoName} = props
+    
+    // const {repoName, repoOwner, url, description, stars, license, forked} = this.responses
     return (
         <div>
-            <h1>am I being renderedx?</h1>
+            
+            <h1>am I {repoName}</h1>
         </div>
     )
    

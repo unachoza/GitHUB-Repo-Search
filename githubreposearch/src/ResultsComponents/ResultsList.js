@@ -1,28 +1,50 @@
-import React, {Component} from 'react'
+import React from 'react'
 import ResultSingle from './ResultSingle'
 import "../App.css"
 
 
 const ResultsList = ({responses}) => {
-    const results = responses.map((items, i ) => {
+    console.log(responses[3])
+    let list = responses
+    const results = list.map((response, i ) => {
+         return (
+             <div>
+                <h1 key={i}>{response.user}</h1>
+                {/* <ResultSingle 
+                    key={i}
+                    repoName={result[i].name}
+                /> */}
+                {response.user}
+            </div>) 
+            })
         return (
-            <ResultSingle 
-            key={i}
-            repoName={items[i].name}
-            repoOwner={items[i].owner.login}
-            url={items[i].owner.url}
-            description ={items[i].description}
-            stars={items[i].stargazer_count}
-            license={items[i].license}
-            forked={items[i].forks}
-            /> 
+            <h1>{results}</h1>
         )
-    })
+     }
+    
+  
+    
 
-    return (
-        {results}
-    )
-}
+// const ResultsList = ({responses}) => {
+//     const results = responses.map((items, i ) => {
+//         return (
+//             <ResultSingle 
+//             key={i}
+//             repoName={items[i].name}
+//             repoOwner={items[i].owner.login}
+//             url={items[i].owner.url}
+//             description ={items[i].description}
+//             stars={items[i].stargazer_count}
+//             license={items[i].license}
+//             forked={items[i].forks}
+//             /> 
+//         )
+//     })
+
+//     return (
+//         {results}
+//     )
+// }
 
 // class ResultsList extends Component{
     
@@ -40,5 +62,4 @@ const ResultsList = ({responses}) => {
 //         )
 //     }
 // }
-
-  export default ResultsList
+   export default ResultsList

@@ -52,24 +52,37 @@ class Form extends Component {
         console.log('waiting')
         await fetch(`https://api.github.com/search/repositories?q=${this.state.text}&sort=stars&order=desc`)
         .then(res => res.json())
-        .then(res => {
+        .then(json => {
             this.setState({
                 isLoaded: true,
-                data: res.items
+                data: json.items
             })
         })
         console.log(this.state.isLoaded, this.state.data[0])
+        this.queryArry(e)
     }
 
+    queryArry = (e) => {
+        e.preventDefault()
+        console.log('jhe')
+        let arr = []
+       if (this.state.isLoaded){
+        this.state.data.map(item => {
+            arr.push(item)
+        })
+       } 
+       this.setState({data: arr}) 
+       console.log(this.state.data)
+    }
 
     render(){
         if  (this.state.isLoaded) {
-            let responses = this.state.data
+            // let responses = this.state.data
                 let firstResponse = this.state.data[0].name
-                // console.log(firstResponse)
+                console.log("firstResponse", firstResponse, this.state.isLoaded)
                 return (
                     <div>
-                        <ResultsList  responses={responses}/>
+                        <ResultsList  responses={this.state.data}/>
                         <h1>{firstResponse}</h1>
                     </div>
                 )
