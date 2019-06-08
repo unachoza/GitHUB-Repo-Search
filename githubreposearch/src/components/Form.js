@@ -78,8 +78,38 @@ class Form extends Component {
         newArr.push(arr[i].name)
        }
        console.log(newArr)
-       let user = arr.map( arr.name, i => ( newArr.push(i)))
-       console.log(user)
+//**********************************starting from here */
+let repoNameArr = []
+let repoOwnerArr = []
+let urlArr = []
+let descArr = []
+let starsArr = []
+let licenseArr = []
+let forkedArr = []
+
+for (let i = 0; i< arr.length; i++){
+ repoNameArr.push(arr[i].name)
+}
+for (let i = 0; i< arr.length; i++){
+ repoOwnerArr.push(arr[i].owner.login)
+}
+for (let i = 0; i< arr.length; i++){
+ urlArr.push(arr[i].owner.url)
+}
+for (let i = 0; i< arr.length; i++){
+ descArr.push(arr[i].description)
+}
+for (let i = 0; i< arr.length; i++){
+ starsArr.push(arr[i].stargazer_count)
+}
+for (let i = 0; i< arr.length; i++){
+ licenseArr.push(arr[i].license)
+}
+for (let i = 0; i< arr.length; i++){
+ forkedArr.push(arr[i].forks)
+}
+console.log("name of repo",repoNameArr, "owner", repoOwnerArr, "url:", urlArr)
+
        this.setState({data: arr}) 
        console.log(this.state.data)
        return <ResultsList data={this.state.data}/>
