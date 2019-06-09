@@ -7,18 +7,20 @@ const ResultsList = ({repoNameArr,repoOwnerArr,urlArr,descArr,starsArr,licenseAr
     // console.log("name is",repoNameArr, "owner is", repoOwnerArr)
     console.log(dataArrObj)
 
-    // const usersByFood = myUsers.map(item => {
-    //     const container = {};
-    
-    //     container[item.name] = item.likes;
-    //     container.age = item.name.length * 10;
-    
-    //     return container;
-    // })
     const repoInfo = dataArrObj.map((item , i)=> (
-        <div className="text">
-        <h2 className="repo-text" key={i}>{item.name}</h2>
-        <p className="repo-description">{item.description}</p>
+        <div className="result-container">
+            <div className="text">
+                <h2 className="repo-text" key={i}>{item.name}</h2>
+                <p className="repo-description">{item.description}</p>
+            </div>
+            <div className="star">
+                <h6 className="text-title">Stars:</h6>
+                <p className="text-answer">{item.stargazers_count}</p>
+            </div>
+            <div className="license">
+            <h6 className="text-title">License:</h6>
+            <p className="text-answer">{item.language}</p>
+        </div>
         </div>
     ))
 
