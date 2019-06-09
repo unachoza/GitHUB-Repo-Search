@@ -142,7 +142,24 @@ width: 20px;
  }
 
 .text {
-    width: 70%
+    width: 62%
+}
+.fork {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 8%;
+}
+#fork-button {
+    height: 22px;
+    widows: 15px;
+    margin: 2%;
+    color: white;
+    font-size: 12px;
+    background: #5285C1;
+    align-content: center;
+    align-items: center;
 }
 .star {
     display: flex;
@@ -152,6 +169,7 @@ width: 20px;
     border: solid 1px  rgb(165, 161, 161);
 width: 12%
 }
+
 .license {
     display: flex;
     flex-direction: column;
