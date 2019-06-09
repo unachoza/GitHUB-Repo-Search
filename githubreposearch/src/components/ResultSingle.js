@@ -13,6 +13,14 @@ const ResultSingle = (repo, key) => {
         <p className="repo-description">repo description</p>
     </div>
     )
+    // return (
+        //             <div className="result-container">
+        //                 <h6>single {this.props.firstResponse}</h6>
+        //                 <RepoText firstResponse={this.props.firstResponse} />
+        //                 <RepoStars />
+        //                 <License />
+        //             </div>
+        //         )
    
 }
 export default ResultSingle

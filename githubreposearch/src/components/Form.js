@@ -72,6 +72,7 @@ class Form extends Component {
             this.state.data.map(item => {
                 return arr.push(item)
             })
+            console.log(this.state.data)
        } 
 
         /* **********************************  starting from here 
@@ -152,6 +153,7 @@ class Form extends Component {
                         <input  id="submit" type="submit" value="Search" />
                     </form>
                     <ResultsList  
+                    dataArrObj={this.state.data}
                     repoNameArr={this.state.repoNameArr}
                     repoOwnerArr={this.state.repoOwnerArr}
                     urlArr={this.state.urlArr}
