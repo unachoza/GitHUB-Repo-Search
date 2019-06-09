@@ -6,7 +6,7 @@ import "../App.css"
 
 
 const ResultsList = ({dataArrObj}) => {
-
+// console.log(dataArrObj.length)
     const repoInfo = dataArrObj.map((item , i)=> (
         <div className="result-container">
             <div className="text">
@@ -22,7 +22,7 @@ const ResultsList = ({dataArrObj}) => {
             </div>
             <div className="license">
                 <h6 className="text-title">License:</h6>
-                <p className="text-answer">{item.language}</p>
+                <p className="text-answer">{item.license.name}</p>
             </div>
         </div>
     ))

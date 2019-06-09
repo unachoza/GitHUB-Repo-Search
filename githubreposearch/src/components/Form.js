@@ -45,7 +45,7 @@ class Form extends Component {
 
     handleQuery = async (e) => {
         console.log('waiting')
-        await fetch(`https://api.github.com/search/repositories?q=${this.state.text}&sort=stars&order=desc`)
+        await fetch(`https://api.github.com/search/repositories?q=${this.state.text}+license:${this.state.license}+stars:${this.state.stars}+fork:${this.state.forked}&sort=stars&order=desc`)
         .then(res => res.json())
         .then(json => {
             this.setState({
@@ -64,6 +64,7 @@ class Form extends Component {
                 return arr.push(item)
             })
        } 
+       console.log(this.state.forked)
     }
 
     render(){
@@ -80,8 +81,8 @@ class Form extends Component {
                                 <option value="null"></option> 
                                 <option value="MIT">MIT</option>
                                 <option value="ISC">ISC</option>
-                                <option value="Apache">Apache</option>
-                                <option value="GLP">GLP</option>
+                                <option value="apache-2.0">apache-2.0</option>
+                                <option value="gpl">gpl</option>
                             </select>
                         </div>
                         <div className="column">
@@ -114,8 +115,8 @@ class Form extends Component {
                             <option value="null"></option> 
                             <option value="MIT">MIT</option>
                             <option value="ISC">ISC</option>
-                            <option value="Apache">Apache</option>
-                            <option value="GLP">GLP</option>
+                            <option value="apache-2.0">apache-2.0</option>
+                            <option value="gpl">gpl</option>
                         </select>
                     </div>
                     <div className="column">
