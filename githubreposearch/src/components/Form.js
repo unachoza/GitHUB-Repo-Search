@@ -6,15 +6,8 @@ class Form extends Component {
     constructor(props){
         super(props)
         this.state = {
-            repoNameArr :[],
-            repoOwnerArr :[],
-            urlArr :[],
-            descArr :[],
-            starsArr :[],
-            licenseArr :[],
-            forkedArr: [],
             isLoaded: false, 
-            // data: []
+            data: []
         }
     }
 
@@ -61,72 +54,21 @@ class Form extends Component {
             })
         })
         this.queryArry(e)
-        console.log("went")
     }
 
     // pulls out data I want and parses into arrays and sets State accourdingly
     queryArry =  () => {
-        console.log('first')
         let arr = []
         if (this.state.isLoaded){
             this.state.data.map(item => {
                 return arr.push(item)
             })
-            console.log(this.state.data)
        } 
-
-        /* **********************************  starting from here 
-        ************************************* Loop this eventually*/
-        let repoNameArr = []
-        let repoOwnerArr = []
-        let urlArr = []
-        let descArr = []
-        let starsArr = []
-        let licenseArr = []
-        let forkedArr = []
-
-        for (let i = 0; i< arr.length; i++){
-        repoNameArr.push(arr[i].name)
-        }
-        for (let i = 0; i< arr.length; i++){
-        repoOwnerArr.push(arr[i].owner.login)
-        }
-        for (let i = 0; i< arr.length; i++){
-        urlArr.push(arr[i].owner.url)
-        }
-        for (let i = 0; i< arr.length; i++){
-        descArr.push(arr[i].description)
-        }
-        for (let i = 0; i< arr.length; i++){
-        starsArr.push(arr[i].stargazer_count)
-        }
-        for (let i = 0; i< arr.length; i++){
-        licenseArr.push(arr[i].license)
-        }
-        for (let i = 0; i< arr.length; i++){
-        forkedArr.push(arr[i].forks)
-        }
-        this.setState({
-            repoNameArr,
-            repoOwnerArr,
-            urlArr,
-            descArr,
-            starsArr,
-            licenseArr,
-            forkedArr
-        })
-
-       this.setState({data: arr}) 
-       console.log(this.state)
-    //    return <ResultsList data={this.state}/>
     }
-
 
     render(){
         if  (this.state.isLoaded) {
-            // let responses = this.state.data
-            let firstResponse = this.state.data[0].name
-            // console.log("firstResponse", firstResponse, this.state.isLoaded)
+            
             return (
                 <div>
                     <form className="form" onSubmit={(e) => this.handleSubmit(e)}>
@@ -152,21 +94,14 @@ class Form extends Component {
                         </div>
                         <input  id="submit" type="submit" value="Search" />
                     </form>
+                    <hr/>
+                    <p className="results-below-text">SEARCH Results</p>
                     <ResultsList  
                     dataArrObj={this.state.data}
-                    repoNameArr={this.state.repoNameArr}
-                    repoOwnerArr={this.state.repoOwnerArr}
-                    urlArr={this.state.urlArr}
-                    descArr={this.state.descArr}
-                    starsArr={this.state.starsArr}
-                    licenseArr={this.state.licenseArr}
-                    forkedArr={this.state.licenseArr}
                     /> 
-                    <h1>{firstResponse}</h1>
                 </div>
             )
         }
-        
             
         return(
             <div>
@@ -193,7 +128,8 @@ class Form extends Component {
                     </div>
                     <input  id="submit" type="submit" value="Search" />
                 </form>
-                
+                <hr/>
+                <p className="results-below-text">Please enter query and click SEARCH button above, results appear here</p>
             </div>
         )
     }
