@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, {Component} from "react"
 import ResultsList from "./ResultsList"
 import "../App.css"
 
@@ -45,13 +45,14 @@ class Form extends Component {
     // querying API .. getting one giant return 
 
     handleQuery = async (e) => {
+        const {text, license, forked, stars} = this.state
         console.log('waiting')
-        await fetch(`https://api.github.com/search/repositories?q=${this.state.text}+license:${this.state.license}+stars:${this.state.stars}+fork:${this.state.forked}&sort=stars&order=desc`)
-        .then(res => res.json())
-        .then(json => {
+        await fetch(`https://api.github.com/search/repositories?q=${text}+license:${license}+stars:${stars}+fork:${forked}&sort=stars&order=desc`)
+        .then(res => res.data())
+        .then(data => {
             this.setState({
                 isLoaded: true,
-                data: json.items
+                data: data.items
             })
         })
         this.queryArry(e)

@@ -1,13 +1,11 @@
-import React, {Component}from 'react'
-import Header from './Header'
-import Form from './Form'
-import Footer from './Footer'
-import ResultsList from './ResultsList';
+import React, {Component}from "react"
+import Header from "./Header"
+import Form from "./Form"
+import Footer from "./Footer"
+import ResultsList from "./ResultsList";
 import "../App.css"
 
-class Search extends Component {
-    render(){
-        return (
+const Search = () => (
             <div className="search-container">
                 <Header />
                 <h1>GitHub Repo Search</h1>
@@ -15,6 +13,5 @@ class Search extends Component {
                 <Footer />
             </div>
         )
-    }
-}
+    
 export default Search
