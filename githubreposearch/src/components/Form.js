@@ -2,7 +2,7 @@ import React, {Component} from "react"
 import ResultsList from "./ResultsList"
 import "../App.css"
 
-class Form extends Component {
+class FormContainer extends Component {
     constructor(props){
         super(props)
         this.state = {
@@ -48,26 +48,16 @@ class Form extends Component {
         const {text, license, forked, stars} = this.state
         console.log('waiting')
         await fetch(`https://api.github.com/search/repositories?q=${text}+license:${license}+stars:${stars}+fork:${forked}&sort=stars&order=desc`)
-        .then(res => res.data())
+        .then(res => res.json())
         .then(data => {
             this.setState({
                 isLoaded: true,
                 data: data.items
             })
         })
-        this.queryArry(e)
     }
 
-    // pulls out data I want and parses into arrays and sets State accourdingly
-    queryArry =  () => {
-        let arr = []
-        if (this.state.isLoaded){
-            this.state.data.map(item => {
-                return arr.push(item)
-            })
-       } 
-       console.log(this.state.forked)
-    }
+   
 
     render(){
         if  (this.state.isLoaded) {
@@ -137,5 +127,5 @@ class Form extends Component {
         )
     }
 }
-export default Form
+export default FormContainer
 
