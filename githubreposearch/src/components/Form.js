@@ -55,6 +55,10 @@ class FormContainer extends Component {
                 data: data.items
             })
         })
+        .catch( (error) => {
+            
+            console.log("this is the error", error)
+        })
     }
 
    

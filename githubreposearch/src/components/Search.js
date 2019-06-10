@@ -1,8 +1,7 @@
-import React, {Component}from "react"
+import React from "react"
 import Header from "./Header"
 import Form from "./Form"
 import Footer from "./Footer"
-import ResultsList from "./ResultsList";
 import "../App.css"
 
 const Search = () => (
