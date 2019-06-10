@@ -7,7 +7,8 @@ class Form extends Component {
         super(props)
         this.state = {
             isLoaded: false, 
-            data: []
+            data: [],
+            forked: false
         }
     }
 
@@ -75,9 +76,9 @@ class Form extends Component {
                     <form className="form" onSubmit={(e) => this.handleSubmit(e)}>
                         <div className="column">
                             Text<br></br>
-                            <input type="input" placeholder="Text" onChange={(e) => this.handleTextInput(e)}/><br></br>
+                            <input type="input" placeholder="Text" required onChange={(e) => this.handleTextInput(e)}  /><br></br>
                             License<br></br>
-                            <select className="dropdown" name="license" onChange={(e) => this.handleDropDown(e)}>
+                            <select className="dropdown" name="license" onChange={(e) => this.handleDropDown(e)} >
                                 <option value="null"></option> 
                                 <option value="MIT">MIT</option>
                                 <option value="ISC">ISC</option>
@@ -87,9 +88,9 @@ class Form extends Component {
                         </div>
                         <div className="column">
                             Stars<br></br>
-                            <input type="input" placeholder="Stars"  onChange={(e) => this.handleStarsInput(e)} /> <br></br>
+                            <input type="input" placeholder="Stars"  onChange={(e) => this.handleStarsInput(e)} required /> <br></br>
                             <div id="fork">
-                            <input id="box"type="checkbox" onClick={(e) => this.forkToggleClick(e)}/> 
+                            <input id="box"type="checkbox" onClick={(e) => this.forkToggleClick(e)} checked={false} required/> 
                             <p id="checkbox-title">Include Forked</p>
                             </div>
                         </div>

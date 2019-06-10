@@ -5,12 +5,10 @@ import React from 'react'
 import "../App.css"
 
 
-const ResultSingle = (repo, key) => {
+const ResultSingle = (repo) => {
      console.log(repo)
     return (
-        <div className="text">
-        <h2 className="repo-text">{repo}</h2>
-        <p className="repo-description">repo description</p>
+        <div> Do I need this. I know I could refactor more, right?
     </div>
     )
    
