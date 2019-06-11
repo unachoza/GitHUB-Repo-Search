@@ -8,24 +8,29 @@ class FormContainer extends Component {
         this.state = {
             isLoaded: false, 
             data: [],
-            forked: false
+            forked: false,
+            error: ""
         }
     }
 
     //capturing inputs from form 
-    handleSubmit =  async (e) => {
+    handleSubmit =   (e) => {
         e.preventDefault()
-        await console.log(this.state)
+         console.log(this.state)
         this.handleQuery(e)
     }
 
-    handleTextInput  = async (e) => {
-        await this.setState({text: e.target.value})
+    handleTextInput  =  (e) => {
+         this.setState({text: e.target.value})
         console.log(this.state.text)
     }
 
-    handleStarsInput  = async (e) => {
-        await this.setState({stars: e.target.value})
+    handleStarsInput  =  (e) => {
+        if (typeof e.target.value !== Number){
+            alert('please enter something better')
+            console.log("wring")
+        }
+         this.setState({stars: e.target.value})
         console.log(this.state.stars)
     }
 
@@ -44,28 +49,46 @@ class FormContainer extends Component {
 
     // querying API .. getting one giant return 
 
-    handleQuery = async (e) => {
+    handleQuery = async () => {
+        console.log(this.state)
         const {text, license, forked, stars} = this.state
-        console.log('waiting')
-        await fetch(`https://api.github.com/search/repositories?q=${text}+license:${license}+stars:${stars}+fork:${forked}&sort=stars&order=desc`)
-        .then(res => res.json())
-        .then(data => {
-            this.setState({
-                isLoaded: true,
-                data: data.items
+        if(text && license && forked && stars){
+            console.log('waiting')
+            await fetch(`https://api.github.com/search/repositories?q=${text}+license:${license}+stars:${stars}+fork:${forked}&sort=stars&order=desc`)
+            .then(res => res.json())
+            .then(data => {
+                this.setState({
+                    isLoaded: true,
+                    data: data.items
+                })
             })
-        })
-        .catch( (error) => {
+            .catch( (error) => {
+                this.setState({error})
+                console.log("this is the error", error, "on state too", this.state.error)
+                return (
+                    <h1>wrong</h1>
+                )
             
-            console.log("this is the error", error)
         })
-    }
+         
+        } else {
+            console.log("no")
+            alert('please fill all inputs')
+        }
 
+        }
+ 
    
 
     render(){
-        if  (this.state.isLoaded) {
+        if(this.state.error){
             
+            return (
+                <div>you're wronge</div>
+            )
+        }
+        else if (this.state.isLoaded) {
+            console.log('this happends')
             return (
                 <div>
                     <form className="form" onSubmit={(e) => this.handleSubmit(e)}>
