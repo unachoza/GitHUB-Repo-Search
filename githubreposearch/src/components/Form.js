@@ -88,7 +88,7 @@ class FormContainer extends Component {
         else if (this.state.isLoaded) {
             console.log('this happends')
             return (
-                <div>
+                <div className="content">
                     <form className="form" onSubmit={(e) => this.handleSubmit(e)}>
                         <div className="column">
                             Text<br></br>
@@ -106,7 +106,7 @@ class FormContainer extends Component {
                             Stars<br></br>
                             <input type="input" placeholder="Stars"  onChange={(e) => this.handleStarsInput(e)} required /> <br></br>
                             <div id="fork">
-                            <input id="box"type="checkbox" onClick={(e) => this.forkToggleClick(e)} checked={false} required/> 
+                            <input id="box"type="checkbox" onClick={(e) => this.toggleFork(e)} checked={false} required/> 
                             <p id="checkbox-title">Include Forked</p>
                             </div>
                         </div>
@@ -122,7 +122,7 @@ class FormContainer extends Component {
         }
             
         return(
-            <div>
+            <div className="content">
                 <form className="form" onSubmit={(e) => this.handleSubmit(e)}>
                     <div className="column">
                         Text<br></br>
@@ -140,7 +140,7 @@ class FormContainer extends Component {
                         Stars<br></br>
                         <input type="input" placeholder="Stars"  onChange={(e) => this.handleStarsInput(e)} /> <br></br>
                      <div id="fork">
-                        <input id="box"type="checkbox" onClick={(e) => this.forkToggleClick(e)}/> 
+                        <input id="box"type="checkbox" onClick={(e) => this.toggleFork(e)}/> 
                         <p id="checkbox-title">Include Forked</p>
                      </div>
                     </div>
