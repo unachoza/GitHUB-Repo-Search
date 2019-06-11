@@ -10,7 +10,6 @@ class FormContainer extends Component {
             forked: false,
             error: ""
         }
-    
 
     //capturing inputs from form 
     handleSubmit =   (e) => {
@@ -19,15 +18,11 @@ class FormContainer extends Component {
         this.handleQuery(e)
     }
 
-    handleTextInput  =  (e) => {
-         this.setState({text: e.target.value})
-        console.log(this.state.text)
-    }
+    handleTextInput  =  (e) =>  this.setState({text: e.target.value})
 
     handleStarsInput  =  (e) => {
         if (typeof e.target.value !== Number){
             alert('please enter something better')
-            console.log("wring")
         }
          this.setState({stars: e.target.value})
         console.log(this.state.stars)
@@ -36,13 +31,11 @@ class FormContainer extends Component {
     toggleFork = (e) => {
         e.preventDefault()
         this.state.forked ? this.setState({forked: false}) : this.setState({forked: true})
-        console.log(this.state.forked)
     }
 
     handleDropDown = (e) => {
         e.preventDefault()
         this.setState({license: e.target.value})
-        console.log(this.state.license)
     }
 
     // querying API .. getting one giant return 
@@ -50,7 +43,7 @@ class FormContainer extends Component {
     handleQuery = async () => {
         console.log(this.state)
         const {text, license, forked, stars} = this.state
-        if(text && license && forked && stars){
+        if(text && license && stars){
             console.log('waiting')
             await fetch(`https://api.github.com/search/repositories?q=${text}+license:${license}+stars:${stars}+fork:${forked}&sort=stars&order=desc`)
             .then(res => res.json())
@@ -84,9 +77,14 @@ class FormContainer extends Component {
             return (
                 <div>you're wronge</div>
             )
+        } 
+        else if(this.state.isLoaded && !this.state.data.length){
+            console.log('nothing')
+            return (
+                <h1 className="content">Your Search returned no results</h1>
+            )
         }
         else if (this.state.isLoaded) {
-            console.log('this happends')
             return (
                 <div className="content">
                     <form className="form" onSubmit={(e) => this.handleSubmit(e)}>
