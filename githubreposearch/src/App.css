@@ -60,6 +60,7 @@ img {
 }
 .content {
     flex: 1 0 auto;
+    /* width: 80%; */
 }
 .header {
     width: 100vw;
@@ -136,3 +137,19 @@ width: 20px;
     text-align: center;
     margin-bottom: 50px;
 }
+@media only screen and (max-width: 650px) {
+    .column {
+        width: 100%;
+        margin-bottom: 22px;
+    }
+    input{
+        width:80%;
+    }
+    .dropdown{
+        width: 85%;
+        height: 40px
+    }
+    .result-container{
+        
+    }
+  }
