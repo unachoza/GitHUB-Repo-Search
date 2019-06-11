@@ -6,6 +6,6 @@ const App = () =>  (
         <div className="app-container">
             <Search />
         </div>
-        )
+    )
     
 export default App

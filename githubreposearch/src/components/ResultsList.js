@@ -36,4 +36,5 @@ const ResultsList = ({dataArrObj}) => {
          </div> )
     }
 
-   export default ResultsList
+export default ResultsList
+   

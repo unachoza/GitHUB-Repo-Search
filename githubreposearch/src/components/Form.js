@@ -3,36 +3,34 @@ import ResultsList from "./ResultsList"
 import "../App.css"
 
 class FormContainer extends Component {
-    constructor(props){
-        super(props)
-        this.state = {
+  
+    state = {
             isLoaded: false, 
             data: [],
             forked: false
         }
-    }
+    
 
     //capturing inputs from form 
-    handleSubmit =  async (e) => {
+    handleSubmit =  (e) => {
         e.preventDefault()
-        await console.log(this.state)
+        console.log(this.state)
         this.handleQuery(e)
     }
 
-    handleTextInput  = async (e) => {
-        await this.setState({text: e.target.value})
+    handleTextInput  = (e) => {
+        this.setState({text: e.target.value})
         console.log(this.state.text)
     }
 
-    handleStarsInput  = async (e) => {
-        await this.setState({stars: e.target.value})
+    handleStarsInput  = (e) => {
+        this.setState({stars: e.target.value})
         console.log(this.state.stars)
     }
 
-    forkToggleClick = (e) => {
+    toggleFork = (e) => {
         e.preventDefault()
         this.state.forked ? this.setState({forked: false}) : this.setState({forked: true})
-        !this.state.forked ? this.setState({forked: true}) : this.setState({forked: false}) 
         console.log(this.state.forked)
     }
 
