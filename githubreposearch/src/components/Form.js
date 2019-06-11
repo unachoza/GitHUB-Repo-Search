@@ -3,15 +3,14 @@ import ResultsList from "./ResultsList"
 import "../App.css"
 
 class FormContainer extends Component {
-    constructor(props){
-        super(props)
-        this.state = {
+  
+    state = {
             isLoaded: false, 
             data: [],
             forked: false,
             error: ""
         }
-    }
+    
 
     //capturing inputs from form 
     handleSubmit =   (e) => {
@@ -34,10 +33,9 @@ class FormContainer extends Component {
         console.log(this.state.stars)
     }
 
-    forkToggleClick = (e) => {
+    toggleFork = (e) => {
         e.preventDefault()
         this.state.forked ? this.setState({forked: false}) : this.setState({forked: true})
-        !this.state.forked ? this.setState({forked: true}) : this.setState({forked: false}) 
         console.log(this.state.forked)
     }
 
