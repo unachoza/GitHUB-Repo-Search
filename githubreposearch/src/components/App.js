@@ -1,27 +1,11 @@
-import React, {Component} from 'react'
-// import ResultsList from './ResultsList'
-import Search from './Search'
+import React from "react"
+import Search from "./Search"
 import "../App.css"
 
-class App extends Component {
-    constructor(){
-        super()
-        this.state ={ 
-            showResults: false
-        }
-    }
-    // renderResult(){
-    //     return this.state.showResults? <ResultsList /> : ""
-    //      }
-
-    render(){
+const App = () =>  (
+        <div className="app-container">
+            <Search />
+        </div>
+    )
     
-        return(
-            <div className="app-container">
-                <Search />
-            </div>
-        )
-    }
-}
-
 export default App

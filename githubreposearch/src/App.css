@@ -1,3 +1,7 @@
+div {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(165, 161, 161)
+}
 .app {
     margin:auto
     
@@ -8,7 +12,14 @@ h1{
     color: black;
     font-weight: lighter
 }
-
+h6{
+    width: 30px;
+}
+hr {
+    border-top: 2px solid rgb(185, 180, 180);
+    width: 80%;
+    margin-top: 50px
+}
 img {
     width: 3%;
     height: auto;
@@ -16,7 +27,10 @@ img {
     border-radius: 4px
 }
 
+
+/* containers */
 .result-container {
+    overflow: hidden;
     border: 1px black solid;
     width: 100%;
     height: 25%;
@@ -31,16 +45,12 @@ img {
     align-items: center
 }
 
-div {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: rgb(165, 161, 161)
-}
 .search-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 80%;
-   
+    height: 100%;
 }
 .app-container {
     display:flex;
@@ -48,7 +58,10 @@ div {
     align-items: center;
     width: 100%;
     height: 100VH
-
+}
+.content {
+    flex: 1 0 auto;
+    /* width: 80%; */
 }
 .header {
     width: 100vw;
@@ -72,51 +85,44 @@ div {
 
 }
 
-hr {
-    border-top: 2px solid rgb(185, 180, 180);
-    width: 80%
-}
 
-.column {
-    float: left;
-    width: 46%;
-    margin: 4px;
-}
+/* Form Components  */
 input {
+    display: flex;
     padding: 10px;
     margin-bottom: 10px;
     width: 200px;
     border: 1px solid rgb(185, 180, 180);
 }
+input#submit {
+   justify-content: center;
+   margin: auto;
+   border-radius: 4px;
+   background: #5285C1;
+   color: white;
+   width: 20%;
+}
 .dropdown {
-    width: 223px;
-    height:20px
+    width: 85%;
+    height:30px;
 }
 select {
     width: 100%;
     padding: 16px 20px;
     border-radius: 4px;
-  }
+}
 option{
     top: 100%;
     left: 0;
     right: 0;
     z-index: 99;
 }
-/* .form {
-    border:3px solid red;
-    display: flex;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
-    justify-items: center;
-    width: 70%
-} */
 #checkbox-title{
     float:right
 }
  #fork {
     display: flex;
+
  }
  #box{
 margin-top: 20px;
@@ -124,62 +130,29 @@ margin-left: 0px;
 margin-right: 0px;
 width: 20px;
  }
-
- input#submit {
-     /* display: flex; */
-    justify-content: center;
-    align-items: center;
-    margin-right: 35%;
-    border-radius: 4px;
-    background: #5285C1;
-    color: white;
-    width: 20%;
-     
-
- }
- h6{
-     width: 30px;
- }
-
-.text {
-    width: 70%
+ .column {
+    float: left;
+    width: 46%;
+    margin: 4px;
+    margin-bottom: 30px;
 }
-.star {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border: solid 1px  rgb(165, 161, 161);
-width: 12%
+.results-below-text{
+    text-align: center;
+    margin-bottom: 50px;
 }
-.license {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 12%
-}
-
-.repo-text {
-    color: #5285C1;
-    font-size: 13px;
-}
-.repo-description {
-    font-size: 12px;
-    color:  rgb(49, 48, 48);
-
-}
-.text-answer {
-    color:  rgb(46, 43, 43);
-    font-size: 12px;
-    font-weight: bold;
-    color: black;
-    margin:0;
-    margin-top: 10px;
-}
-.text-title{
-    font-size: 12px;
-    font-weight: lighter;
-    color:  rgb(46, 43, 43);
-    margin: 0px
-}
+@media only screen and (max-width: 650px) {
+    .column {
+        width: 100%;
+        margin-bottom: 22px;
+    }
+    input{
+        width:80%;
+    }
+    .dropdown{
+        width: 85%;
+        height: 40px
+    }
+    .result-container{
+        
+    }
+  }
