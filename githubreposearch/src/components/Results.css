@@ -1,6 +1,4 @@
-.results-sub-container{
 
-}
 
 #text {
     width: 62%;
@@ -11,9 +9,13 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    width: 8%;
+    width: 20%;
+    height: 100%;
+    border:1px solid green
 }
 #fork-button {
+    display: flex;
+    justify-content: center;
     height: 22px;
     width: 90px;
     margin: 2%;
@@ -69,18 +71,21 @@ a {
     color: black
 }
 @media only screen and (max-width: 650px) {
-    .results-sub-container{
-        /* display: flex; */
+    /* .results-sub-container{
         width: 100%;
         
-    }
+    } */
     .result-container{
         display: flex;
         border: solid 1px  rgb(165, 161, 161);
         flex-direction: column;
     }
+    .text-fork{
+        display:flex;
+        flex-wrap: wrap
+    }
     #star{
-        width: 94.2%;
+        width: 100%;
         align-items: flex-start;
         padding: 10px;
         border-bottom: solid 1px  rgb(165, 161, 161); 
@@ -93,10 +98,17 @@ a {
        
     }
     #text {
-        width: 100%;
+        width: 70%;
         
+    }
+    /* a{
+        width: 70%
+    } */
+    .fork{
+        width: 20%
     }
     .repo-description{
         padding-right: 10px;
     }
+   
   }

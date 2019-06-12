@@ -21,16 +21,18 @@ class FormContainer extends Component {
     handleTextInput  =  (e) =>  this.setState({text: e.target.value})
 
     handleStarsInput  =  (e) => {
-        if (typeof e.target.value !== Number){
-            alert('please enter something better')
-        }
+        //implement a check here to insure valid input:
+        // check input doesn't contain any alpebetic string or special characters 
+        // only numbers and  [>, <, =, - , ]
+        // alert('please enter a numerica value, range and/or operator')
+        
          this.setState({stars: e.target.value})
-        console.log(this.state.stars)
     }
 
     toggleFork = (e) => {
-        e.preventDefault()
+       
         this.state.forked ? this.setState({forked: false}) : this.setState({forked: true})
+        console.log(this.state.forked)
     }
 
     handleDropDown = (e) => {
@@ -55,9 +57,11 @@ class FormContainer extends Component {
             })
             .catch( (error) => {
                 this.setState({error})
-                console.log("this is the error", error, "on state too", this.state.error)
+                console.log("this is the error", error)
                 return (
-                    <h1>wrong</h1>
+                    <div className="content">
+                        <h1>{this.state.error}</h1>
+                    </div>
                 )
             
         })
@@ -72,10 +76,11 @@ class FormContainer extends Component {
    
 
     render(){
+        console.log(this.state.error)
         if(this.state.error){
             
             return (
-                <div>you're wronge</div>
+                <div className="content" >you're wronge</div>
             )
         } 
         else if(this.state.isLoaded && !this.state.data.length){
@@ -93,7 +98,6 @@ class FormContainer extends Component {
                             <input type="input" placeholder="Text" required onChange={(e) => this.handleTextInput(e)}  /><br></br>
                             License<br></br>
                             <select className="dropdown" name="license" onChange={(e) => this.handleDropDown(e)} >
-                                <option value="null"></option> 
                                 <option value="MIT">MIT</option>
                                 <option value="ISC">ISC</option>
                                 <option value="apache-2.0">apache-2.0</option>
@@ -104,7 +108,7 @@ class FormContainer extends Component {
                             Stars<br></br>
                             <input type="input" placeholder="Stars"  onChange={(e) => this.handleStarsInput(e)} required /> <br></br>
                             <div id="fork">
-                            <input id="box"type="checkbox" onClick={(e) => this.toggleFork(e)} checked={false} required/> 
+                            <input id="box"type="checkbox" onClick={(e) => this.toggleFork(e)} checked={this.state.forked}/> 
                             <p id="checkbox-title">Include Forked</p>
                             </div>
                         </div>
