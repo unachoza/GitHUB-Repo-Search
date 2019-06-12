@@ -2,7 +2,7 @@ import React from "react"
 import "../App.css"
 
 const Footer = () => (
-        <div className="footer">Footer Information</div>
+        <div className="footer">©2017 Even Financial, Inc - CONFIDENTIAL </div>
     )
 
 

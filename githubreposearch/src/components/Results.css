@@ -72,10 +72,6 @@ a {
     color: black
 }
 @media only screen and (max-width: 650px) {
-    /* .results-sub-container{
-        width: 100%;
-        
-    } */
     .result-container{
         display: flex;
         border: solid 1px  rgb(165, 161, 161);
