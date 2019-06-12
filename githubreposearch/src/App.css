@@ -104,7 +104,7 @@ input#submit {
 }
 .dropdown {
     width: 85%;
-    height:20%
+    height:30px;
 }
 select {
     width: 100%;
@@ -134,6 +134,7 @@ width: 20px;
     float: left;
     width: 46%;
     margin: 4px;
+    margin-bottom: 30px;
 }
 .results-below-text{
     text-align: center;

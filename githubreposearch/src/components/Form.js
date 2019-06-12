@@ -57,13 +57,12 @@ class FormContainer extends Component {
             })
             .catch( (error) => {
                 this.setState({error})
-                console.log("this is the error", error)
                 return (
                     <div className="content">
-                        <h1>{this.state.error}</h1>
+                        <h1>There was a problem: <br></br>
+                        {this.state.error}</h1>
                     </div>
                 )
-            
         })
          
         } else {
@@ -71,16 +70,16 @@ class FormContainer extends Component {
             alert('please fill all inputs')
         }
 
-        }
- 
-   
-
+    }
     render(){
         console.log(this.state.error)
         if(this.state.error){
             
             return (
-                <div className="content" >you're wronge</div>
+                <div className="content">
+                    <h1>There was a problem: <br></br>
+                    {this.state.error}</h1>
+                </div>
             )
         } 
         else if(this.state.isLoaded && !this.state.data.length){
