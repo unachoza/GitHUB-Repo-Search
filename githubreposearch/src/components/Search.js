@@ -7,7 +7,7 @@ import "../App.css"
 const Search = () => (
             <div className="search-container">
                 <Header />
-                <h1 className="title">EVEN FINANCIAL GitHub Repo Search</h1>
+                <h1 className="title">GitHub Repo Search</h1>
                 <Form />
                 <Footer />
             </div>

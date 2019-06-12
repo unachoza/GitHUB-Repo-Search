@@ -25,7 +25,7 @@ img {
     height: auto;
     padding: 0;
     border-radius: 4px;
-    margin-bottom: 10%;
+    /* margin-bottom: 10%; */
 }
 
 
@@ -67,7 +67,7 @@ img {
 .header {
     width: 100vw;
     height: 10vh;
-    background-color: #5285C1; 
+    background-color:rgb(116, 10, 80); 
    
 }
 .footer {
@@ -75,13 +75,13 @@ img {
     height: 10vh;
     bottom: 100;
     display: flex;
-    background-color: #5285C1; 
+    background-color: rgb(116, 10, 80); 
     justify-content: center;
     align-items: center;
     color: white
 }
 .logo {
-   padding-top: 28px;
+   padding-top: 10px;
    padding-left: 15%;
 
 }
@@ -99,7 +99,7 @@ input#submit {
    justify-content: center;
    margin: auto;
    border-radius: 4px;
-   background: #5285C1;
+   background: rgb(116, 10, 80); 
    color: white;
    width: 20%;
 }
@@ -152,9 +152,6 @@ width: 20px;
     .dropdown{
         width: 85%;
         height: 40px
-    }
-    .result-container{
-        
     }
   }
   .title {
